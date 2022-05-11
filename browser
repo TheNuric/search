@@ -1,0 +1,43 @@
+from tkinter.messagebox import *
+from tkinter import *
+import webbrowser
+
+def tizim():
+    qidir=kirit.get()
+    uzun=len(qidir)
+    if (uzun == 1) or (uzun==0):
+         showerror(title="XATOLIK",message="Qidirmoqchi bo'lgan \nso'zingiz juda kam.\nKamida 2 harf va \nundan ortiq bo'lishi kerak")
+    else :
+       webbrowser.open_new_tab(f"http://www.duckduckgo.com/{kirit.get()}")
+
+def ulash():
+    webbrowser.open_new_tab("https://t.me/ANONIM_HACKER_007")
+
+
+app=Tk()
+app.title('QIDIRUV TIZMI ')
+app.resizable(0,0)
+app.geometry("500x490")
+app.configure(background="brown")
+
+
+eslatma=Label(text="XAVFSIZ QIDIRUV TIZMI",width=45,height=4,font=("Comic Sans Ms",7,"bold"),background="light blue",relief=SOLID)
+eslatma.place(x=15,y=15)
+
+
+soz=Label(text="Qidirmoqchi bo'lgan so'zingizni kiriting:",width=40,height=2,bg="brown",fg="yellow",font=("Comic Sans Ms",8,"bold"))
+soz.place(x=15,y=160)
+
+
+kirit=Entry(background="white",foreground="blue",width=25,relief=SOLID,font=("Times",8,"bold"))
+kirit.place(x=140,y=230)
+
+
+search=Button(text="QIDIRISH",bg="orange",fg="purple",activeforeground="red",activebackground="yellow",relief=SOLID,command=tizim,font=("Times",7,"bold"),cursor="hand2")
+search.place(x=250,y=290)
+
+
+reklama=Button(text="Telegramdan murojat \nuchun  : ANONIM_HACKER_007",relief=SOLID,font=("TIMES",7,"bold"),background="brown",foreground="grey",activeforeground="black",activebackground="red",command=ulash)
+reklama.place(x=110,y=400)
+
+app.mainloop()
